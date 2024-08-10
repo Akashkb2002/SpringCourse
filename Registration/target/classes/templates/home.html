@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Course</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="https://scopeindia.org/images/favicon.ico"><script src="https://scopeindia.org/js/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Custom CSS for positioning logo */
+    .logo-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      
+    }
+    .nav-item{
+        padding-left: 85px !important; 
+        
+      }
+      .register {
+        background: linear-gradient(45deg, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+        background-size: 400%;
+        border: none;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        animation: register 8s infinite;
+      }
+
+      @keyframes register {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+      
+  </style>
+    
+    <body>
+        <nav class="navbar navbar-expand-sm fixed-top justify-content-center" style="background-color:rgb(32, 32, 111);">
+            <div class="container-fluid">
+              <ul class="navbar-nav">
+                <li class="nav-item ps-2 pe-3">
+                  <a class="nav-link  text-light " th:href="@{/home}">Home</a>
+                </li>
+                <li class="nav-item ps-3 pe-3">
+                  <a class="nav-link  text-light" th:href="@{/course}">Course</a>
+                </li>
+                <li class="nav-item ps-3 pe-5">
+                  <a class="nav-link  text-light" th:href="@{/login}">Login</a>
+                </li>
+                <li class="nav-item ps-5 pe-5 ">
+                    <a class="navbar-brand" href="https://scopeindia.org/software-networking-testing-cloud-training-kerala-trivandrum-kochin" title="SCOPE INDIA - Software and Networking Professional Education Center">
+                        <img src="https://scopeindia.org/images/scope-india-logo-bird.png" style="width:40px;" alt="SCOPE INDIA"></a>
+                </a>
+                </li>
+              
+                <li class="nav-item ps-5 pe-3">
+                    <a class="nav-link  text-light" th:href="@{/dashboard}">Dashboard</a>
+                  </li>
+                  <li class="nav-item ps-3 pe-3 ">
+                    <a class="nav-link  text-light" th:href="@{/sendmail}">Contact us</a>
+                  </li>
+                  <li class="nav-item ps-3 pe-3 ">
+                    <a class="nav-link  text-light register pe-5" th:href="@{/}">Register now</a>
+                  </li> 
+                  
+              </ul>
+            </div>
+        </nav>
+        <div class="container-fluid p-0">
+          <div class="slider_home rev-slidebg" style="background-image: url('https://scopeindia.org/images/slider_bg.jpg'); height: 1000px;">
+            <div class="logo-container">
+              <img src="https://scopeindia.org/images/scope-india-logo-home-page.png" alt="Scope India Logo">
+            </div>
+            
+          </div>
+        </div> 
+        <div class="m-5 p-2 d-flex" style="background-color: rgb(223, 222, 222);width: 75%;height:90%;margin-left:30%;" >
+  
+    
+          <div >
+              <!--<a class="footer_links" href="tel:+919745936073" title="Click to Call!"><img style="margin-top: 12px;" class="scale-with-grid" src="https://scopeindia.org/images/scope-india-lets-discuss-your-career.jpg"></a>-->
+              <iframe class="border border-5 border-dark p-2" style="border-color:rgb(32, 32, 111)!important;" width="553" height="430" src="https://www.youtube.com/embed/eIFj4nYNYbw?autoplay=1&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div>
+            
+            <h2 class=" p-4" style="color:rgb(32, 32, 111) ;">SCOPE INDIA
+            <br> is open 365 days a year</h2>
+                
+            <p class="p-4">
+                   We are open 7 days 24 hrs to talk to you and listen to your queries.
+            </p>
+            
+            <form class="ms-4 me-4 ">
+              <h3  style="color: #009318;">GET A FREE CALL BACK</h3>
+              <input type="text" class="form-control mb-2 call_back_form_ele mt-3 " id="call_back_visitor_name" placeholder="Enter your name">
+              <input type="tel" class="form-control call_back_form_ele mt-3" id="call_back_visitor_phone" placeholder="Enter your phone no.">
+              <button type="button" id="call_back_visitor_click" class="btn  btn-success call_back_form_ele mt-3 "style="background-color:#009318;width:100%" >Call Me</button>
+              </div>
+            </form>
+    
+  </div>
+      
+    <div  th:style="'background-image:url(https://scopeindia.org/images/snowpark-skis-headerbg2.jpg);background-size: cover;'">
+       <footer id="Footer" class="clearfix">
+              <div class="widgets_wrapper" style="padding:70px 0">
+                  <div class="container">
+                      <div class="column one">
+                          <aside class="widget_text widget widget_custom_html">
+                              <div class="textwidget custom-html-widget">
+                                  <div style="text-align:center">
+                                    <div class="image_frame image_item no_link scale-with-grid aligncenter no_border">
+                                        <div class="image_wrapper">
+                                            <img class="scale-with-grid" src="https://scopeindia.org/images/snowpark-footer-logo.png">
+                                        </div>
+                                    </div>
+<div class="row">
+                                            <div class="col-md-12 text-light">Technopark TVM | Thampanoor TVM | Kochi, Kerala | Nagercoil, Tamil Nadu</div>
+                                        </div>
+                                        <hr class="no_line" style="margin:0 auto 30px">
+                                      <img class="scale-with-grid" alt="An ISO 9001:2015, IAS &amp; IFS Certified Company" title="An ISO 9001:2015, IAS &amp; IAF Certified Company" src="https://scopeindia.org/images/iso_iaflogo.png" width="400" height="100">
+<p style="text-align:center;">An ISO 9001:2015 Certified Company</p>
+                                    
+                                    
+                                    <p class="text-light" style="text-align:center;">All Rights Reserved <a class="footer_links" target="_blank"  href="https://www.suffixesolutions.com/" title="A trusted IT Partner"> Suffix E Solutions </a>&copy; 2007-2023</p>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2"><a class="footer_links" href="tel:+919745936073">9745936073 (TPK) </a></div>
+                                        <div class="col-md-2"><a class="footer_links" href="tel:+919745936073">9745936073 (TVM) </a></div>
+                                        <div class="col-md-2"><a class="footer_links" href="tel:+917592939481">7592939481 (EKM) </a></div>
+                                        <div class="col-md-2"><a class="footer_links" href="tel:+918075536185">8075536185 (NGL) </a></div>
+                                        <div class="col-md-2"><a class="footer_links" target="_blank"  href="mailto:info@scopeindia.org" style="outline: none;">info@scopeindia.org</a></div>
+                                    </div>
+                                  </div>
+                              </div>
+                          </aside>
+                      </div>
+                  </div>
+              </div>
+
+          </footer>
+                     
+       </div>   
+    </body>     
+</html>    

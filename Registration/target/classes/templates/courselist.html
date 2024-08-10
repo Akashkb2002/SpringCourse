@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course List</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align:center;
+            font-size: 18px; 
+        }
+        h1 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        .course-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+        .course-item {
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+        .course-item:hover {
+            transform: translateY(-5px);
+        }
+        .course-link {
+            display: block;
+            padding: 15px;
+            color: #333333;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .course-link:hover {
+            background-color: #f0f0f0;
+        }
+         .logo-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      
+    }
+    .nav-item{
+        padding-left: 85px !important; 
+        
+      }
+      .register {
+        background: linear-gradient(45deg, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+        background-size: 400%;
+        border: none;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        animation: register 8s infinite;
+      }
+
+      @keyframes register {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    </style>
+</head>
+<body th:style="'background-image: url(https://scopeindia.org/images/snowpark-skis-headerbg2.jpg);background-size: cover;'">
+         
+<nav class="navbar navbar-expand-sm fixed-top justify-content-center" style="background-color:rgb(32, 32, 111);">
+            <div class="container-fluid">
+              <ul class="navbar-nav">
+                <li class="nav-item ps-2 pe-3">
+                  <a class="nav-link  text-light " th:href="@{/home}">Home</a>
+                </li>
+                <li class="nav-item ps-3 pe-3">
+                  <a class="nav-link  text-light" th:href="@{/course}">Course</a>
+                </li>
+                <li class="nav-item ps-3 pe-5">
+                  <a class="nav-link  text-light" th:href="@{/login}">Login</a>
+                </li>
+                <li class="nav-item ps-5 pe-5 ">
+                    <a class="navbar-brand" href="https://scopeindia.org/software-networking-testing-cloud-training-kerala-trivandrum-kochin" title="SCOPE INDIA - Software and Networking Professional Education Center">
+                        <img src="https://scopeindia.org/images/scope-india-logo-bird.png" style="width:40px;" alt="SCOPE INDIA"></a>
+                </a>
+                </li>
+              
+                <li class="nav-item ps-5 pe-3">
+                    <a class="nav-link  text-light" th:href="@{/dashboard}">Dashboard</a>
+                  </li>
+                  <li class="nav-item ps-3 pe-3 ">
+                    <a class="nav-link  text-light" th:href="@{/sendmail}">Contact us</a>
+                  </li>
+                  <li class="nav-item ps-3 pe-3 ">
+                    <a class="nav-link  text-light register pe-5" th:href="@{/}">Register now</a>
+                  </li> 
+                  
+              </ul>
+            </div>
+        </nav>
+    <h1>Course List</h1>
+    <ul class="course-list">
+        <li class="course-item" th:each="course : ${courses}">
+            <a class="course-link" th:href="@{/coursedetails/{courseid}(courseid=${course.courseid})}" th:text="${course.coursename}"></a>
+        </li>
+    </ul>
+</body>
+</html>
+    
